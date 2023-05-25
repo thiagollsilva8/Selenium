@@ -2,15 +2,25 @@ package Utils;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class CommonMethods {
 
-    public  static WebDriver driver;
+    public static WebDriver driver;
 
-    public static void openBrowserAndLaunchApplication(String url){
+    public static void openBrowserAndLaunchApplication(String url, String browser) {
 
-        // create instance
-        WebDriver driver = new ChromeDriver();
+        switch (browser) {
+
+            case "chrome":
+                driver = new ChromeDriver();
+                break;
+
+            case "firefox":
+                driver = new FirefoxDriver();
+                break;
+
+        }
 
         // navigate to url
         driver.get(url);
@@ -22,13 +32,16 @@ public class CommonMethods {
     }
 
 
-    public static void closeBrowser(){
+    public static void closeBrowser() {
 
-        driver.quit();
+        if(driver != null) {
+            driver.quit();
+        }
+
+
 
 
     }
-
 
 
 }

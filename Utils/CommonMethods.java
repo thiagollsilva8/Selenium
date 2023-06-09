@@ -1,8 +1,11 @@
 package Utils;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import java.util.concurrent.TimeUnit;
 
 public class CommonMethods {
 
@@ -22,26 +25,30 @@ public class CommonMethods {
 
         }
 
+        // maximize screen
+        //driver.manage().window().maximize();
+
         // navigate to url
         driver.get(url);
 
-        // maximize screen
-        driver.manage().window().maximize();
-
+        //implicit wait
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
     }
 
 
     public static void closeBrowser() {
 
-        if(driver != null) {
+        if (driver != null) {
             driver.quit();
         }
-
-
-
 
     }
 
 
+    public static void sendText(String text, WebElement element) {
+
+        element.clear();
+        element.sendKeys(text);
+    }
 }

@@ -1,10 +1,10 @@
 What is Selenium?
-    Selenium is a testing tool that helps us automate websites, i.e it allows us to test those websites
+    Selenium is a testing tool that helps us automate websites i.e., it allows us to test those websites
 
 How are websites made?
     Using HTML code
 
-<input> => usually all tags have a closing tag, but there are few wehich do not have a closing tag
+<input> => usually all tags have a closing tag, but there are few which do not have a closing tag
 <input id='abc' class='pert' name='xyz'>
 
 <button id='abc> </button>
@@ -50,7 +50,7 @@ In order to deal with WebElements on a website, we need locators and selenium pr
 3.  //tagName[starts-with(@attribute,'startingvalue of attrib')]
     //tagName[starts-with(text(),'startingvalue of text')]
 
-Last resort is if after every try still xpath isn't unique enough we can use indexing
+Last resort is if after every try still xpath isn't unique enough, we can use indexing
 
 To have operators like and or in our xpath conditions
 tagName[@attribute='value' and @attribute='value']
